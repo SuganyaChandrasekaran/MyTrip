@@ -1,0 +1,11 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100-vh;  
+    font-family: Arial, sans-serif;
+    border-style: solid;
+    border-top: none;
+    text-align: center;
+  }
+  

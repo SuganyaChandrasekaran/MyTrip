@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="text-danger">Profile Settings</th>
+          <th>
+            <a routerLink="/changepassword" routerLinkActive="active">Change Password</a>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" class="form-control" [(ngModel)]="user.firstName" placeholder="First Name" /></td>
+          <td><input type="text" class="form-control" [(ngModel)]="user.lastName" placeholder="Last Name" /></td>
+        </tr>
+        <tr>
+          <td>
+            <select class="form-control" [(ngModel)]="user.gender">
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </td>
+          <td><input type="date" class="form-control" [(ngModel)]="user.dob" /></td>
+        </tr>
+        <tr>
+          <td><input type="email" class="form-control" [(ngModel)]="user.email" placeholder="Email" /></td>
+          <td><input type="text" class="form-control" [(ngModel)]="user.phoneNo" placeholder="Phone Number" /></td>
+        </tr>
+        <tr>
+          <td><input type="text" class="form-control" [(ngModel)]="user.country" placeholder="Country" /></td>
+          <td><input type="text" class="form-control" [(ngModel)]="user.state" placeholder="State" /></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button class="btn btn-primary w-100" (click)="saveProfile()">Save</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <router-outlet></router-outlet>

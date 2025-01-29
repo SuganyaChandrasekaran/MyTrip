@@ -1,0 +1,41 @@
+/* Container
+.container {
+    width: 80%;
+    margin:  auto;
+    font-family: Arial, sans-serif;
+    border-style: solid;
+  } */
+  
+  .content {
+    text-align: center;
+  }
+  /* Header */
+  .header {
+    border-style: solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 2px solid black;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 20px;
+  }
+
+  .nav-links a {
+    margin-left: 15px;
+    text-decoration: none;
+    font-weight: bold;
+  } 
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a.active {
+  color: red; /* Highlight the active link in red */
+  font-weight: bold; /* Optional: Make the active link bold */
+}

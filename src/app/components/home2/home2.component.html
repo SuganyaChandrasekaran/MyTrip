@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+            <div class="col-md-6 border">
+                <div class="profile-section">
+                    <img [src]="user.userProfileImageUrl || 'https://via.placeholder.com/100'" alt="User Photo" class="img-fluid rounded-circle user-photo mb-3"/>
+                    <p class="connections fw-bold"><strong>{{ user.acceptedUserFriends?.length || 0 }} connections</strong></p>
+                    <p class="posts fw-bold"><strong>{{ user.userPost?.length || 0 }} Posts</strong></p>
+                </div>
+            </div>
+
+        <div class="col-md-6 border">
+            <div class="post-area mb-3">
+                <form (ngSubmit)="addPost()">
+                    <div class="input-group">
+                      <textarea [(ngModel)]="newPostContent" name="newPost" class="form-control" rows="2" placeholder="Write new post/upload pic"></textarea>
+                      <button class="btn btn-primary" type="submit">Post</button>
+                    </div>
+                  </form>
+            </div>
+
+            <div class="col-md-6 border">
+                <div *ngFor="let post of posts" class="existing-posts">
+                    <p><strong>{{ post.content }}</strong></p>
+                    <p>Uploaded {{ post.uploadTime }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

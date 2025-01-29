@@ -1,0 +1,22 @@
+<div class="header">
+  <!-- Logo -->
+  <a class="logo" routerLink="">FBOOK</a>
+
+  <!-- Navigation Links -->
+  <div class="nav-links">
+    <ng-container *ngIf="isLoggedIn; else loggedOut">
+      <a routerLink="home" routerLinkActive="active">Home</a>
+      <ng-container *ngIf="isAdmin">
+          <a routerLink="users" routerLinkActive="active">Users</a>
+      </ng-container>
+      <a routerLink="network" routerLinkActive="active">Network</a>
+      <a routerLink="friends" routerLinkActive="active">Friends</a>
+      <a routerLink="setting" routerLinkActive="active">Settings</a>
+      <a routerLink="logout" routerLinkActive="active">Logout</a>
+    </ng-container>
+    <ng-template #loggedOut>
+      <a routerLink="register" routerLinkActive="active">Register</a>
+      <a routerLink="login" routerLinkActive="active">Login</a>
+    </ng-template>
+  </div>
+</div>

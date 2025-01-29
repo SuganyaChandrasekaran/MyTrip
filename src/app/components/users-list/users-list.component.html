@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+            <div class="col-md-6 border">
+                <div class="profile-section">
+                    <img [src]="user.userProfileImageUrl || 'https://via.placeholder.com/100'" alt="User Photo" class="img-fluid rounded-circle user-photo mb-3"/>
+                    <p class="connections fw-bold"><strong>{{ user.acceptedUserFriends?.length || 0 }} connections</strong></p>
+                    <p class="posts fw-bold"><strong>{{ user.userPost?.length || 0 }} Posts</strong></p>
+                </div>
+            </div>
+
+        <!-- Friends Section -->
+      <div class="col-md-4 border">
+        <div class="friend-list">
+          <h3> List of Users in Fbook</h3>
+          <div *ngFor="let user of allUserDetails" class="friend-item d-flex align-items-center justify-content-between border mb-3 p-2">
+            <div class="d-flex align-items-center">
+              <div class="user-photo me-3">
+                <img [src]="user.userProfileImageUrl || 'https://via.placeholder.com/50'" alt="{{ user.firstName }}" class="img-fluid rounded-circle" />
+              </div>
+              <div class="friend-details">
+                <p class="mb-1"><strong>{{ user.firstName }}</strong></p>
+              </div>
+              <!-- Navigate to Manage User -->
+  <button class="btn btn-primary btn-sm" (click)="navigateToManageUser(user.id)">Manage User</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<h2 class="text-center my-4">User Registration Form</h2>
+
+<div class="registration-form">
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+             <input type="text" placeholder="First Name" formControlName="fname" class="form-control" id="fname" required
+             [ngClass]="{'is-invalid':isUserFormSubmitted && userFormControls['fname'].errors}"> 
+             <div *ngIf="isUserFormSubmitted && userFormControls['fname'].errors" class="invalid-feedback">
+                <div *ngIf="userFormControls['fname'].errors['required']">
+                    First Name is required
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input type="text" placeholder="Last Name" formControlName="lname" class="form-control" id="lname" required
+            [ngClass]="{'is-invalid':isUserFormSubmitted && userFormControls['lname'].errors}"> 
+             <div *ngIf="isUserFormSubmitted && userFormControls['lname'].errors" class="invalid-feedback">
+                <div *ngIf="userFormControls['lname'].errors['required']">
+                    Last Name is required
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input type="text" placeholder="Email" formControlName="email" class="form-control" id="email" required email
+            [ngClass]="{'is-invalid':isUserFormSubmitted && userFormControls['email'].errors}"> 
+             <div *ngIf="isUserFormSubmitted && userFormControls['email'].errors" class="invalid-feedback">
+                <div *ngIf="userFormControls['email'].errors['required']">
+                    Email is required
+                </div>
+                <div *ngIf="userFormControls['email'].errors['email']">
+                    Enter Valid Email Id
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input type="date" placeholder="Date of Birth" formControlName="dob" class="form-control" id="dob" required
+            [ngClass]="{'is-invalid':isUserFormSubmitted && userFormControls['dob'].errors}"> 
+             <div *ngIf="isUserFormSubmitted && userFormControls['dob'].errors" class="invalid-feedback">
+                <div *ngIf="userFormControls['dob'].errors['required']">
+                    Date of Birth is required
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input type="text" placeholder="Password" formControlName="password" class="form-control" id="password" required minLength
+            [ngClass]="{'is-invalid':isUserFormSubmitted && userFormControls['password'].errors}"> 
+             <div *ngIf="isUserFormSubmitted && userFormControls['password'].errors" class="invalid-feedback">
+                <div *ngIf="userFormControls['password'].errors['required']">
+                    Password is required
+                </div>
+                <div *ngIf="userFormControls['password'].errors['minlength']">
+                    Mininum length of password should be 6
+                </div>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+    </form>
+</div>
+    

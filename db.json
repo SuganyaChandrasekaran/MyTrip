@@ -1,0 +1,130 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Suganya",
+      "lastName": "Chandrasekaran",
+      "email": "suganya@example.com",
+      "phoneNo": "9086462626",
+      "dob": "1989-09-26",
+      "username": "sugan",
+      "role": "Admin",
+      "country": "India",
+      "state": "Tamil Nadu",
+      "profileStatus": "active",
+      "password": "12345678",
+      "userProfileImageUrl": "https://via.placeholder.com/150",
+      "userPost": [
+        {
+          "id": 101,
+          "content": "Good Morning!",
+          "uploadTime": "2024-12-01T05:14:09"
+        },
+        {
+          "id": 102,
+          "content": "Welcome to FBook!",
+          "uploadTime": "2024-12-01T05:14:48"
+        }
+      ],
+      "userConnectionReq": [],
+      "acceptedUserFriends": [],
+      "rejectedUserFriends": [],
+      "cancelledUserFriends": [],
+      "gender": "Female"
+    },
+    {
+      "id": "2",
+      "firstName": "Sureshhhh",
+      "lastName": "Kumar",
+      "email": "suresh@example.com",
+      "phoneNo": "9876543210",
+      "dob": "1990-01-15",
+      "username": "suresh",
+      "role": "user",
+      "country": "India",
+      "state": "Karnataka",
+      "profileStatus": "active",
+      "password": "pass123",
+      "userProfileImageUrl": "https://via.placeholder.com/150",
+      "userPost": [
+        {
+          "id": 1734173275384,
+          "content": "hello from admin",
+          "uploadTime": "2024-12-14T10:47:55.384Z",
+          "hidden": true
+        },
+        {
+          "id": 1734173289910,
+          "content": "heloooooo",
+          "uploadTime": "2024-12-14T10:48:09.910Z",
+          "hidden": true
+        }
+      ],
+      "userConnectionReq": [
+        {
+          "id": "1",
+          "firstName": "Suganya",
+          "lastName": "Chandrasekaran"
+        }
+      ],
+      "acceptedUserFriends": [],
+      "rejectedUserFriends": [],
+      "cancelledUserFriends": [],
+      "gender": "Male"
+    },
+    {
+      "id": "3",
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "phoneNo": "9123456789",
+      "dob": "1988-05-10",
+      "username": "johnny",
+      "role": "user",
+      "country": "USA",
+      "state": "California",
+      "profileStatus": "active",
+      "password": "johndoe2024",
+      "userProfileImageUrl": "https://via.placeholder.com/150",
+      "userPost": [],
+      "userConnectionReq": [
+        {
+          "id": "1",
+          "firstName": "Suganya",
+          "lastName": "Chandrasekaran"
+        }
+      ],
+      "acceptedUserFriends": [],
+      "rejectedUserFriends": [],
+      "cancelledUserFriends": [],
+      "gender": "Male"
+    },
+    {
+      "id": "4",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "jane.smith@example.com",
+      "phoneNo": "9876543210",
+      "dob": "1995-07-20",
+      "username": "jane",
+      "role": "user",
+      "country": "Canada",
+      "state": "Ontario",
+      "profileStatus": "active",
+      "password": "janesmith123",
+      "userProfileImageUrl": "https://via.placeholder.com/150",
+      "userPost": [],
+      "userConnectionReq": [
+        {
+          "id": "1",
+          "firstName": "Suganya",
+          "lastName": "Chandrasekaran"
+        }
+      ],
+      "acceptedUserFriends": [],
+      "rejectedUserFriends": [],
+      "cancelledUserFriends": [],
+      "gender": "Female"
+    }
+  ]
+}

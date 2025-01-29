@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+      <!-- Profile Section -->
+      <div class="col-md-4 border text-center">
+        <div class="profile-section">
+          <img src={{user.userProfileImageUrl}} alt="Photo" class="img-fluid rounded-circle mb-3" />
+          <p><strong>{{user.firstName}} Photo</strong></p>
+          <p><strong>{{ user.acceptedUserFriends?.length }} connections</strong></p>
+          <p><strong>{{ user.userPost?.length  }} Posts</strong></p>
+        </div>
+      </div>
+  
+      <!-- Friends Section -->
+      <div class="col-md-8 border">
+        <div class="friend-list">
+          <div *ngFor="let friend of acceptedUserFriends" class="friend-item d-flex align-items-center justify-content-between border mb-3 p-2">
+            <div class="d-flex align-items-center">
+              <div class="user-photo me-3">
+                <img [src]="friend.userProfileImageUrl||'https://via.placeholder.com/50'" alt="{{ friend.firstName }}" class="img-fluid rounded-circle" />
+              </div>
+              <div class="friend-details">
+                <p class="mb-1"><strong>{{ friend.firstName }}</strong></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

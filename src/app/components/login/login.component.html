@@ -1,0 +1,34 @@
+<div class="container mt-5">
+    <h2 class="text-center my-4">User Login Form</h2>
+    <div class="registration-form">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <input type="text" placeholder="User Name" formControlName="username" class="form-control" id="username" required
+                [ngClass]="{'is-invalid':isLoginFormSubmitted && loginFormControls['username'].errors}"> 
+                <div *ngIf="isLoginFormSubmitted && loginFormControls['username'].errors" class="invalid-feedback">
+                    <div *ngIf="loginFormControls['username'].errors['required']">
+                        User Name is required
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <input type="text" placeholder="Password" formControlName="password" class="form-control" id="password" required
+                [ngClass]="{'is-invalid':isLoginFormSubmitted && loginFormControls['password'].errors}"> 
+                <div *ngIf="isLoginFormSubmitted && loginFormControls['password'].errors" class="invalid-feedback">
+                <div *ngIf="loginFormControls['password'].errors['required']">
+                    Password is required
+                </div>
+                <div *ngIf="loginFormControls['password'].errors['minlength']">
+                        Password must have minimum 6 charaters
+                </div>
+            </div>
+        </div>
+        <div class="text-start mb-3">
+            <a class="forget-password" routerLink="/forgetpassword">Forget Password</a>
+        </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+    </div>
+</div>
+    
+<router-outlet></router-outlet>

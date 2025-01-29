@@ -1,0 +1,53 @@
+<div class="container">
+    <div class="row">
+      <!-- Profile Section -->
+      <div class="col-md-4 border text-center">
+        <div class="profile-section">
+          <img src={{user.userProfileImageUrl}} alt="Photo" class="img-fluid rounded-circle mb-3" />
+          <p><strong>{{user.firstName}} Photo</strong></p>
+          <p><strong>{{ user.acceptedUserFriends?.length }} connections</strong></p>
+          <p><strong>{{ user.userPost?.length  }} Posts</strong></p>          
+        </div>
+      </div>
+  
+      <!-- Friends Section -->
+      <div class="col-md-4 border">
+        <div class="friend-list">
+          <h3> Available Users</h3>
+          <div *ngFor="let user of filteredDetails" class="friend-item d-flex align-items-center justify-content-between border mb-3 p-2">
+            <div class="d-flex align-items-center">
+              <div class="user-photo me-3">
+                <img [src]="user.userProfileImageUrl || 'https://via.placeholder.com/50'" alt="{{ user.firstName }}" class="img-fluid rounded-circle" />
+              </div>
+              <div class="friend-details">
+                <p class="mb-1"><strong>{{ user.firstName }}</strong></p>
+              </div>
+            </div>
+            <div class="friend-action">
+              <button 
+                  class="btn"
+                  [ngClass]="{
+                    'btn-secondary': user.status === 'Pending',
+                    'btn-success': user.status === 'Friend',
+                    'btn-primary': user.status === 'Send Request',
+                    'btn-warning': user.status === 'Request awaiting your approval'
+                  }"
+                  (click)="handleRequest(user)"
+                  [disabled]="user.status === 'Pending' || user.status === 'Friend' || user.status === 'Request awaiting your approval'">
+                  {{ user.status || 'Send Request' }}
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <h3> User Requests </h3>
+        <div *ngFor="let request of user.userConnectionReq">
+          <p>{{ request.firstName }} {{ request.lastName }}</p>
+          <button (click)="acceptRequest(request)">Accept</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

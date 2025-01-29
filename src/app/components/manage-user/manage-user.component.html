@@ -1,0 +1,88 @@
+<div class="admin-container">
+    <!-- Header Section -->
+    <h1>Admin User Management</h1>
+  
+    <!-- User Profile Section -->
+    <div class="user-profile">
+      <img
+        [src]="user?.userProfileImageUrl || 'https://via.placeholder.com/150'"
+        alt="{{ user?.firstName }}'s profile"
+        class="profile-image"
+      />
+      <h2>{{ user?.firstName }} {{ user?.lastName }}</h2>
+      <p><strong>Email:</strong> {{ user?.email }}</p>
+      <p><strong>Phone:</strong> {{ user?.phoneNo }}</p>
+      <p><strong>DOB:</strong> {{ user?.dob }}</p>
+      <p><strong>Gender:</strong> {{ user?.gender }}</p>
+      <p><strong>Role:</strong> {{ user?.role }}</p>
+      <p><strong>Profile Status:</strong> {{ user?.profileStatus }}</p>
+      <button (click)="toggleProfileStatus()" class="btn">
+        {{ user?.profileStatus === 'active' ? 'Block Account' : 'Unblock Account' }}
+      </button>
+    </div>
+  
+    <!-- Password Management -->
+    <div class="password-management">
+      <h3>Manage Password</h3>
+      <button (click)="resetPassword()" class="btn">Reset Password</button>
+    </div>
+  
+    <!-- Admin Post Section -->
+    <div class="admin-post">
+      <h3>Post Advertisement/Message</h3>
+      <textarea [(ngModel)]="newPostContent" rows="4" placeholder="Type your message here..."></textarea>
+      <button (click)="postMessage()" class="btn">Post</button>
+    </div>
+  
+    <!-- User Posts Section -->
+    <div class="post-list">
+      <h4>User Posts</h4>
+      <div *ngFor="let post of user.userPost">
+          <ng-container>
+            <strong>{{ post.uploadTime | date: 'short' }}:</strong>
+            <p [class.hidden]="post.hidden">{{ post.content }}</p>
+            <button
+              *ngIf="!post.hidden"
+              (click)="togglePostVisibility(post.id, true)"
+              class="btn hide-btn"
+            >
+              Hide
+            </button>
+            <button
+              *ngIf="post.hidden"
+              (click)="togglePostVisibility(post.id, false)"
+              class="btn unhide-btn"
+            >
+              Unhide
+            </button>
+          </ng-container>
+      </div>
+    </div>
+    
+  
+    <!-- Profile Details Management -->
+    <div class="profile-details-management">
+      <h3>Edit Profile Details</h3>
+      <form (ngSubmit)="updateProfile()">
+        <label for="firstName">First Name</label>
+        <input id="firstName" [(ngModel)]="user.firstName" name="firstName" type="text" />
+  
+        <label for="lastName">Last Name</label>
+        <input id="lastName" [(ngModel)]="user.lastName" name="lastName" type="text" />
+  
+        <label for="email">Email</label>
+        <input id="email" [(ngModel)]="user.email" name="email" type="email" />
+  
+        <label for="phoneNo">Phone</label>
+        <input id="phoneNo" [(ngModel)]="user.phoneNo" name="phoneNo" type="tel" />
+  
+        <label for="country">Country</label>
+        <input id="country" [(ngModel)]="user.country" name="country" type="text" />
+  
+        <label for="state">State</label>
+        <input id="state" [(ngModel)]="user.state" name="state" type="text" />
+  
+        <button type="submit" class="btn">Save Changes</button>
+      </form>
+    </div>
+  </div>  
