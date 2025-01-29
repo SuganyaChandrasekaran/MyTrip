@@ -1,0 +1,40 @@
+/* General container styling */
+.container {
+    margin-top: 16px;
+  }
+  
+  /* Form styling */
+  form .form-group {
+    margin-bottom: 12px;
+  }
+  
+  form label {
+    font-weight: bold;
+  }
+  
+  form input {
+    border-radius: 4px;
+    padding: 6px;
+  }
+  
+  /* Button styling */
+  button {
+    margin-top: 8px;
+  }
+  
+  /* Journey details card styling */
+  .card.j_details {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+  }
+  
+  .text-coral {
+    color: coral;
+  }
+  
+  .text-capitalize {
+    text-transform: capitalize;
+  }
+  
